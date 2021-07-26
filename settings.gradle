@@ -1,0 +1,2 @@
+rootProject.name = "MoSoF"
+include ':app'
