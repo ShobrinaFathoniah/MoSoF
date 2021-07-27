@@ -1,5 +1,6 @@
 package com.haviks.mosof.data.local.room
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -9,8 +10,8 @@ import com.haviks.mosof.data.local.entity.PlantEntity
 @Dao
 interface PlantDao {
     @Query("SELECT * FROM plant")
-    fun getAllPlantCondition(): PlantEntity
+    fun getAllPlantCondition(): LiveData<PlantEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPlant(plant: PlantEntity)
+    fun insertPlant(plant: PlantEntity)
 }
