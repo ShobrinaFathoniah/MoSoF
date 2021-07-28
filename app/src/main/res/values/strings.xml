@@ -18,4 +18,6 @@
     <string name="add_water">Tambah Air</string>
     <string name="exit_verif">Tekan Sekali Lagi untuk Keluar</string>
     <string name="done">Selesai</string>
+    <string name="on">Dinyalakan</string>
+    <string name="off">Dimatikan</string>
 </resources>
