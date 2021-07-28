@@ -1,7 +1,11 @@
 package com.haviks.mosof
 
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -71,5 +75,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private var exit = false
+    override fun onBackPressed() {
+        if (exit) {
+            finishAffinity()
+        } else {
+            Toast.makeText(
+                this, getString(R.string.exit_verif),
+                Toast.LENGTH_SHORT
+            ).show()
+            exit = true
+            Handler(Looper.getMainLooper()).postDelayed({ exit = false }, 3 * 1000)
+        }
     }
 }

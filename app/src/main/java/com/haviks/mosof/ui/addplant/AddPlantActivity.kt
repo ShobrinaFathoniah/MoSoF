@@ -1,6 +1,7 @@
 package com.haviks.mosof.ui.addplant
 
 import android.content.Intent
+import android.os.AsyncTask
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -40,9 +41,11 @@ class AddPlantActivity : AppCompatActivity() {
         } else {
             with(_activityAddBinding) {
                 this.btnNext.setOnClickListener {
-
                     val plantName = this.queryText.text.toString()
-                    viewModel.getNamePlant(plantName)
+
+                    Thread{
+                        viewModel.getNamePlant(plantName)
+                    }.start()
 
                     welcomeEntity.isActive = true
                     welcomePreference.setLaunchApp(welcomeEntity)
@@ -51,4 +54,6 @@ class AddPlantActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }
