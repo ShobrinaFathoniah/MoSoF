@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
-        android:text="''"
+        android:text="@string/apostrophe"
         android:textColor="@color/red"
         android:textSize="80sp"
         android:textStyle="bold"
@@ -65,7 +65,8 @@
         android:src="@drawable/temp_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_plant_condition" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_plant_condition"
+        android:contentDescription="@string/temperature" />
 
     <TextView
         android:id="@+id/tv_temperature"
@@ -88,7 +89,8 @@
         app:layout_constraintEnd_toStartOf="@+id/iv_temperature"
         app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_plant_condition" />
+        app:layout_constraintTop_toBottomOf="@id/tv_plant_condition"
+        android:contentDescription="@string/cd_plant" />
 
     <ImageView
         android:id="@+id/iv_leaves2"
@@ -99,7 +101,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toEndOf="@+id/iv_temperature"
-        app:layout_constraintTop_toBottomOf="@id/tv_plant_condition" />
+        app:layout_constraintTop_toBottomOf="@id/tv_plant_condition"
+        android:contentDescription="@string/cd_plant" />
 
     <ImageView
         android:id="@+id/iv_humidity"
@@ -108,7 +111,8 @@
         android:layout_marginStart="72dp"
         android:src="@drawable/humid_icon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_leaves1" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_leaves1"
+        android:contentDescription="@string/humidtiy" />
 
     <TextView
         android:id="@+id/tv_humidity"
