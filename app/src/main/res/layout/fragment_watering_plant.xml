@@ -10,20 +10,20 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="232dp"
+        android:contentDescription="@string/cd_plant"
         android:src="@drawable/plant_white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/cd_plant" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/iv_watering_plant"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginTop="52dp"
+        android:contentDescription="@string/watering"
         android:src="@drawable/watering"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/watering" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_watering"
@@ -31,8 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="@string/watering"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_watering2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_plant" />
 
     <Button
@@ -40,10 +40,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="@string/done"
         android:backgroundTint="@color/red"
-        app:layout_constraintStart_toEndOf="@id/btn_watering"
+        android:text="@string/done"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_watering"
         app:layout_constraintTop_toBottomOf="@id/iv_plant" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

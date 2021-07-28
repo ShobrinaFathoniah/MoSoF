@@ -10,10 +10,10 @@
         android:layout_width="300dp"
         android:layout_height="280dp"
         android:layout_marginTop="232dp"
+        android:contentDescription="@string/cd_plant"
         android:src="@drawable/plant_white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/cd_plant" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/iv_fertilizing_plant"
@@ -21,10 +21,10 @@
         android:layout_height="150dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="50dp"
+        android:contentDescription="@string/fertilizing"
         android:src="@drawable/fertilizing"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/fertilizing" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_fertilizing"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="@string/fertilizing"
-app:layout_constraintEnd_toStartOf="@id/btn_fertilizing2"
+        app:layout_constraintEnd_toStartOf="@id/btn_fertilizing2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_plant" />
 
