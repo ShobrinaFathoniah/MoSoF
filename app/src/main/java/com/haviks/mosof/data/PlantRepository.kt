@@ -2,6 +2,7 @@ package com.haviks.mosof.data
 
 import androidx.lifecycle.LiveData
 import com.haviks.mosof.data.local.LocalDataSource
+import com.haviks.mosof.data.local.entity.PlantConditionEntity
 import com.haviks.mosof.data.local.entity.PlantEntity
 import com.haviks.mosof.data.remote.RemoteDataSource
 import com.haviks.mosof.data.remote.network.ApiResponse
@@ -32,33 +33,33 @@ class PlantRepository private constructor(
             }
     }
 
-    override fun getPlantCondition(): LiveData<Resource<PlantEntity>> {
+    override fun getPlantCondition(): LiveData<Resource<PlantConditionEntity>> {
         return object :
-            NetworkBoundResource<PlantEntity, PlantResponse>(
+            NetworkBoundResource<PlantConditionEntity, PlantResponse>(
                 appExecutors
             ) {
-            override fun loadFromDB(): LiveData<PlantEntity> =
+            override fun loadFromDB(): LiveData<PlantConditionEntity> =
                 localDataSource.getAllPlantCondition()
 
-            override fun shouldFetch(data: PlantEntity?): Boolean {
-
-                return true
-            }
+            override fun shouldFetch(data: PlantConditionEntity?): Boolean = true
 
             override fun createCall(): LiveData<ApiResponse<PlantResponse>> =
-                remoteDataSource.getPlantCondition()
+                remoteDataSource.getPlantConditions()
 
             override fun saveCallResult(data: PlantResponse) {
                 val plantData =
-                    PlantEntity(
+                    PlantConditionEntity(
                         1,
-                        "",
                         data.humidity.toString(),
                         data.temperature.toString(),
                         data.pH.toString()
                     )
-                localDataSource.insertPlant(plantData)
+                localDataSource.insertPlantCondition(plantData)
             }
         }.asLiveData()
     }
+
+    override fun insertPlantName(name: String) = localDataSource.insertPlantName(name)
+
+    override fun getPlant(): LiveData<PlantEntity> = localDataSource.getAllPlant()
 }

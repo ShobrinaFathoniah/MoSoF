@@ -13,13 +13,22 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class RemoteDataSource {
-    fun getPlantCondition(): LiveData<ApiResponse<PlantResponse>> {
+    companion object {
+        @Volatile
+        private var instance: RemoteDataSource? = null
+
+        fun getInstance(): RemoteDataSource =
+            instance ?: synchronized(this) {
+                instance ?: RemoteDataSource()
+            }
+    }
+
+    fun getPlantConditions(): LiveData<ApiResponse<PlantResponse>> {
         val resultData = MutableLiveData<ApiResponse<PlantResponse>>()
 
         val handler = Handler(Looper.getMainLooper())
         handler.postDelayed({
-            ApiService
-                .create()
+            ApiService.create()
                 .getPlantCondition()
                 .enqueue(object : Callback<PlantResponse> {
                     override fun onResponse(

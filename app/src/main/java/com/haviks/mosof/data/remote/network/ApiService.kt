@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 interface ApiService {
-    @GET("as")
+    @GET("")
     fun getPlantCondition(): Call<PlantResponse>
 
     companion object {

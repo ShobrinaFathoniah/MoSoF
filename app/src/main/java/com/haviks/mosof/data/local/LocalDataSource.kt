@@ -1,7 +1,9 @@
 package com.haviks.mosof.data.local
 
 import androidx.lifecycle.LiveData
+import com.haviks.mosof.data.local.entity.PlantConditionEntity
 import com.haviks.mosof.data.local.entity.PlantEntity
+import com.haviks.mosof.data.local.entity.PlantNameEntity
 import com.haviks.mosof.data.local.room.PlantDao
 
 class LocalDataSource private constructor(private val plantDao: PlantDao) {
@@ -17,7 +19,11 @@ class LocalDataSource private constructor(private val plantDao: PlantDao) {
             }
     }
 
-    fun getAllPlantCondition(): LiveData<PlantEntity> = plantDao.getAllPlantCondition()
+    fun getAllPlantCondition(): LiveData<PlantConditionEntity> = plantDao.getAllPlantCondition()
 
-    fun insertPlant(plant: PlantEntity) = plantDao.insertPlant(plant)
+    fun getAllPlant(): LiveData<PlantEntity> = plantDao.getAllPlant()
+
+    fun insertPlantName(name: String) = plantDao.insertPlantName(name)
+
+    fun insertPlantCondition(plant: PlantConditionEntity) = plantDao.insertPlantCondition(plant)
 }

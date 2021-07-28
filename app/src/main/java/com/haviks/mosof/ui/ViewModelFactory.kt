@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.haviks.mosof.data.PlantRepository
+import com.haviks.mosof.di.Injection
 import com.haviks.mosof.ui.action.FertilizingPlantViewModel
 import com.haviks.mosof.ui.action.WateringPlantViewModel
 import com.haviks.mosof.ui.addplant.AddPlantViewModel
@@ -19,8 +20,10 @@ class ViewModelFactory private constructor(private val plantRepository: PlantRep
         fun getInstance(context: Context): ViewModelFactory =
             instance ?: synchronized(this) {
                 instance ?: ViewModelFactory(
-                    PlantRepository.getInstance(context)
-                )
+                    Injection.plantRepository(context)
+                ).apply {
+                    instance = this
+                }
             }
     }
 
