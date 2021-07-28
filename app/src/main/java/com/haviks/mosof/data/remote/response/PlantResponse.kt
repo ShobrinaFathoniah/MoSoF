@@ -12,4 +12,4 @@ data class PlantResponse(
     val temperature: String? = null,
     @field:SerializedName("")
     val pH: String? = null
-):Parcelable
+) : Parcelable

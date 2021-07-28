@@ -1,7 +1,6 @@
 package com.haviks.mosof.ui.addplant
 
 import android.content.Intent
-import android.os.AsyncTask
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -43,7 +42,7 @@ class AddPlantActivity : AppCompatActivity() {
                 this.btnNext.setOnClickListener {
                     val plantName = this.queryText.text.toString()
 
-                    Thread{
+                    Thread {
                         viewModel.getNamePlant(plantName)
                     }.start()
 
