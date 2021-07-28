@@ -30,6 +30,22 @@ class PlantConditionFragment : Fragment() {
         val factory = ViewModelFactory.getInstance(requireActivity())
         val viewModel =
             ViewModelProvider(this, factory)[PlantConditionViewModel::class.java]
+
+        viewModel.condition.observe(viewLifecycleOwner, {
+            viewModel.getAll.observe(viewLifecycleOwner, { all ->
+                val humid = all.humidity
+                val temp = all.temperature
+                val pH = all.pH
+                val plantName = all.name
+
+                _fragmentConditionBinding.apply {
+                    this?.tvHumidity?.text = humid
+                    this?.tvPH?.text = pH
+                    this?.tvTemperature?.text = temp
+                    this?.tvPlantName?.text = plantName
+                }
+            })
+        })
     }
 
     override fun onDestroyView() {
