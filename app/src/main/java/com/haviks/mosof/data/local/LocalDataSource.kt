@@ -3,7 +3,6 @@ package com.haviks.mosof.data.local
 import androidx.lifecycle.LiveData
 import com.haviks.mosof.data.local.entity.PlantConditionEntity
 import com.haviks.mosof.data.local.entity.PlantEntity
-import com.haviks.mosof.data.local.entity.PlantNameEntity
 import com.haviks.mosof.data.local.room.PlantDao
 
 class LocalDataSource private constructor(private val plantDao: PlantDao) {

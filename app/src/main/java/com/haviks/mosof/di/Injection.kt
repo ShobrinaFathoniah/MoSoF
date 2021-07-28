@@ -11,7 +11,7 @@ object Injection {
 
     fun plantRepository(context: Context): PlantRepository {
         val database = PlantDatabase.getInstance(context)
-        val remoteDataSource = RemoteDataSource.getInstance()
+        val remoteDataSource = RemoteDataSource()
         val localDataSource = LocalDataSource.getInstance(database.plantDao())
         val appExecutors = AppExecutors()
 

@@ -13,15 +13,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class RemoteDataSource {
-    companion object {
-        @Volatile
-        private var instance: RemoteDataSource? = null
-
-        fun getInstance(): RemoteDataSource =
-            instance ?: synchronized(this) {
-                instance ?: RemoteDataSource()
-            }
-    }
 
     fun getPlantConditions(): LiveData<ApiResponse<PlantResponse>> {
         val resultData = MutableLiveData<ApiResponse<PlantResponse>>()
