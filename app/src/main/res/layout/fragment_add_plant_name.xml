@@ -44,7 +44,8 @@
             android:id="@+id/queryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/input_plant_name"
+            android:hint="@string/input_plant_name"
+            android:textColorHint="@color/dark_green"
             android:textColor="@color/dark_green" />
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -26,4 +26,5 @@
     <string name="add_fertilizer">Tambah Pupuk</string>
     <string name="add_water">Tambah Air</string>
     <string name="exit_verif">Tekan Sekali Lagi untuk Keluar</string>
+    <string name="done">Selesai</string>
 </resources>
