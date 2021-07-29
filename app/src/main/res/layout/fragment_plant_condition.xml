@@ -22,7 +22,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
         android:text="@string/apostrophe"
         android:textColor="@color/red"
         android:textSize="80sp"
@@ -48,12 +47,13 @@
         android:id="@+id/tv_apostrophe2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/apostrophe"
         android:textColor="@color/red"
         android:textSize="80sp"
         android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tv_plant_condition"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_plant_name" />
 
@@ -61,10 +61,10 @@
         android:id="@+id/iv_temperature"
         android:layout_width="30dp"
         android:layout_height="80dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="48dp"
         android:contentDescription="@string/temperature"
         android:src="@drawable/temp_icon"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_plant_condition" />
 
@@ -72,93 +72,76 @@
         android:id="@+id/tv_temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/temperature"
         android:textColor="@color/green"
         android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_humidity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_temperature" />
-
-    <ImageView
-        android:id="@+id/iv_leaves1"
-        android:layout_width="170dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/cd_plant"
-        android:src="@drawable/green_leaves"
-        app:layout_constraintEnd_toStartOf="@+id/iv_temperature"
-        app:layout_constraintHorizontal_bias="0.447"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_plant_condition" />
-
-    <ImageView
-        android:id="@+id/iv_leaves2"
-        android:layout_width="170dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/cd_plant"
-        android:src="@drawable/green_leaves_flip"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
-        app:layout_constraintStart_toEndOf="@+id/iv_temperature"
-        app:layout_constraintTop_toBottomOf="@id/tv_plant_condition" />
 
     <ImageView
         android:id="@+id/iv_humidity"
         android:layout_width="90dp"
         android:layout_height="80dp"
-        android:layout_marginStart="72dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="50dp"
         android:contentDescription="@string/humidtiy"
         android:src="@drawable/humid_icon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_leaves1" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_plant_condition" />
 
     <TextView
         android:id="@+id/tv_humidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
+        android:layout_marginTop="10dp"
         android:text="@string/humidtiy"
         android:textColor="@color/green"
         android:textSize="50sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_temperature"
         app:layout_constraintTop_toBottomOf="@+id/iv_humidity" />
 
     <TextView
-        android:id="@+id/tv_pH_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ph_icon"
+        android:id="@+id/iv_soilMoisture"
+        android:layout_width="130dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="40dp"
         android:textColor="@color/dark_green"
-        android:textSize="60sp"
+        android:textSize="30sp"
         android:textStyle="bold"
+        android:gravity="center"
+        android:text="@string/moisture"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/iv_humidity"
-        app:layout_constraintTop_toBottomOf="@+id/iv_leaves2" />
+        app:layout_constraintStart_toEndOf="@id/iv_soilDryness"
+        app:layout_constraintTop_toBottomOf="@+id/tv_humidity"
+        android:contentDescription="@string/soilMoisture" />
 
     <TextView
-        android:id="@+id/tv_pH"
+        android:id="@+id/tv_soil_moisture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pH"
         android:textColor="@color/green"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_humidity"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pH_icon" />
+        app:layout_constraintStart_toEndOf="@id/tv_soil_dryness"
+        app:layout_constraintTop_toBottomOf="@+id/iv_soilMoisture" />
 
-    <ImageView
+    <TextView
         android:id="@+id/iv_soilDryness"
         android:layout_width="130dp"
         android:layout_height="90dp"
-        android:contentDescription="@string/soiDryness"
-        android:src="@drawable/clipart4691869"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/dark_green"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="@string/dryness"
+        app:layout_constraintEnd_toStartOf="@id/iv_soilMoisture"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_temperature"
-        app:layout_constraintVertical_bias="0.63" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_temperature" />
 
     <TextView
         android:id="@+id/tv_soil_dryness"
@@ -167,7 +150,27 @@
         android:text="@string/_40"
         android:textColor="@color/green"
         android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_soil_moisture"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_soilDryness" />
+
+    <ImageView
+        android:id="@+id/iv_leaves1"
+        android:layout_width="140dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/cd_plant"
+        android:src="@drawable/green_leaves"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_leaves2"
+        android:layout_width="140dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/cd_plant"
+        android:src="@drawable/green_leaves_flip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,8 @@
 package com.haviks.mosof.ui.action
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,11 +37,10 @@ class WateringPlantFragment : Fragment() {
 
         _fragmentWateringBinding?.btnWatering?.setOnClickListener {
             Toast.makeText(context, getString(R.string.on), Toast.LENGTH_SHORT).show()
+
+            Handler(Looper.getMainLooper()).postDelayed({ Toast.makeText(context, getString(R.string.off), Toast.LENGTH_SHORT).show() }, 3000)
         }
 
-        _fragmentWateringBinding?.btnWatering2?.setOnClickListener {
-            Toast.makeText(context, getString(R.string.off), Toast.LENGTH_SHORT).show()
-        }
     }
 
     override fun onDestroyView() {

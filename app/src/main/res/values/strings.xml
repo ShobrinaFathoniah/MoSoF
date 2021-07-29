@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MoSoF</string>
     <string name="input_plant_name">Tuliskan Nama Tanamanmu</string>
+    <string name="input_name">Nama</string>
     <string name="let_s_plant">Let\'s Plant</string>
     <string name="plant_condition">Bahaya! Tanamanmu Kurang Air!</string>
     <string name="plant_name">TanamanKu</string>
@@ -18,8 +19,11 @@
     <string name="add_water">Tambah Air</string>
     <string name="exit_verif">Tekan Sekali Lagi untuk Keluar</string>
     <string name="done">Selesai</string>
-    <string name="on">Dinyalakan</string>
-    <string name="off">Dimatikan</string>
+    <string name="on">Dinyalakan, harap tunggu sebentar</string>
+    <string name="off">Telah Selesai dilakukan</string>
     <string name="soiDryness">Kekeringan Tanah</string>
     <string name="_40">40</string>
+    <string name="soilMoisture">soil moisture</string>
+    <string name="moisture">Moisture</string>
+    <string name="dryness">Dryness</string>
 </resources>

@@ -10,11 +10,11 @@
             android:title="@string/app_name" />
         <item
             android:id="@+id/nav_add_fertilizer"
-            android:icon="@drawable/add_fertilize_icon"
+            android:icon="@drawable/ic_fertilizer"
             android:title="@string/add_fertilizer" />
         <item
             android:id="@+id/nav_add_water"
-            android:icon="@drawable/add_humid_icon"
+            android:icon="@drawable/humid_icon"
             android:title="@string/add_water" />
     </group>
 </menu>

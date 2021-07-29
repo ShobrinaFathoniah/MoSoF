@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.haviks.mosof.databinding.FragmentPlantConditionBinding
 import com.haviks.mosof.ui.ViewModelFactory
+import java.lang.StringBuilder
 
 class PlantConditionFragment : Fragment() {
     private var _fragmentConditionBinding: FragmentPlantConditionBinding? = null
@@ -40,14 +41,14 @@ class PlantConditionFragment : Fragment() {
                                val temp = temperature.data?.temperature ?: "0"
                                val soilMoisture = moisture.data?.soilMoisture ?: "0"
                             val soilDryness = dryness.data?.soilDryness ?: "0"
-                           // val plantName = all.name ?: "TanamanKu"
+                            val plantName = all?.name ?: "TanamanKu"
 
                             _fragmentConditionBinding.apply {
                                  this?.tvHumidity?.text = humid
-                                 this?.tvPH?.text = soilMoisture
-                                 this?.tvTemperature?.text = temp
-                                this?.tvSoilDryness?.text = soilDryness
-                           //     this?.tvPlantName?.text = plantName
+                                 this?.tvSoilMoisture?.text = soilMoisture
+                                 this?.tvTemperature?.text = StringBuilder("${temp}\u2103")
+                                this?.tvSoilDryness?.text = StringBuilder("${soilDryness}%")
+                                this?.tvPlantName?.text = plantName
                             }
                         })
                     })
