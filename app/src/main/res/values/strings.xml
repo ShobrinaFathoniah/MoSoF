@@ -20,4 +20,6 @@
     <string name="done">Selesai</string>
     <string name="on">Dinyalakan</string>
     <string name="off">Dimatikan</string>
+    <string name="soiDryness">Kekeringan Tanah</string>
+    <string name="_40">40</string>
 </resources>

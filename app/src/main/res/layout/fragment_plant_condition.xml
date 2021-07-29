@@ -9,7 +9,7 @@
         android:id="@+id/tv_plant_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:text="@string/plant_name"
         android:textColor="@color/green"
         android:textSize="50sp"
@@ -34,7 +34,7 @@
         android:id="@+id/tv_plant_condition"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:text="@string/plant_condition"
         android:textAlignment="center"
         android:textColor="@color/red"
@@ -48,7 +48,7 @@
         android:id="@+id/tv_apostrophe2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="30dp"
         android:text="@string/apostrophe"
         android:textColor="@color/red"
@@ -147,4 +147,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_humidity"
         app:layout_constraintTop_toBottomOf="@+id/tv_pH_icon" />
+
+    <ImageView
+        android:id="@+id/iv_soilDryness"
+        android:layout_width="130dp"
+        android:layout_height="90dp"
+        android:contentDescription="@string/soiDryness"
+        android:src="@drawable/clipart4691869"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_temperature"
+        app:layout_constraintVertical_bias="0.63" />
+
+    <TextView
+        android:id="@+id/tv_soil_dryness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_40"
+        android:textColor="@color/green"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_soilDryness" />
 </androidx.constraintlayout.widget.ConstraintLayout>

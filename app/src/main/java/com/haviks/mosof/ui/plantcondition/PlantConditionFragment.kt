@@ -31,19 +31,27 @@ class PlantConditionFragment : Fragment() {
         val viewModel =
             ViewModelProvider(this, factory)[PlantConditionViewModel::class.java]
 
-        viewModel.condition.observe(viewLifecycleOwner, {
-            viewModel.getAll.observe(viewLifecycleOwner, { all ->
-                val humid = all.humidity
-                val temp = all.temperature
-                val pH = all.pH
-                val plantName = all.name
+        viewModel.humidity.observe(viewLifecycleOwner, { humidity ->
+            viewModel.temperature.observe(viewLifecycleOwner, { temperature ->
+                viewModel.soilDryness.observe(viewLifecycleOwner, {dryness ->
+                    viewModel.soilMoisture.observe(viewLifecycleOwner, { moisture ->
+                        viewModel.getAll.observe(viewLifecycleOwner, { all ->
+                               val humid = humidity.data?.humidity ?: "0"
+                               val temp = temperature.data?.temperature ?: "0"
+                               val soilMoisture = moisture.data?.soilMoisture ?: "0"
+                            val soilDryness = dryness.data?.soilDryness ?: "0"
+                           // val plantName = all.name ?: "TanamanKu"
 
-                _fragmentConditionBinding.apply {
-                    this?.tvHumidity?.text = humid
-                    this?.tvPH?.text = pH
-                    this?.tvTemperature?.text = temp
-                    this?.tvPlantName?.text = plantName
-                }
+                            _fragmentConditionBinding.apply {
+                                 this?.tvHumidity?.text = humid
+                                 this?.tvPH?.text = soilMoisture
+                                 this?.tvTemperature?.text = temp
+                                this?.tvSoilDryness?.text = soilDryness
+                           //     this?.tvPlantName?.text = plantName
+                            }
+                        })
+                    })
+                })
             })
         })
     }

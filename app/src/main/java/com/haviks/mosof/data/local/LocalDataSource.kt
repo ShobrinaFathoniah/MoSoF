@@ -1,8 +1,7 @@
 package com.haviks.mosof.data.local
 
 import androidx.lifecycle.LiveData
-import com.haviks.mosof.data.local.entity.PlantConditionEntity
-import com.haviks.mosof.data.local.entity.PlantEntity
+import com.haviks.mosof.data.local.entity.*
 import com.haviks.mosof.data.local.room.PlantDao
 
 class LocalDataSource private constructor(private val plantDao: PlantDao) {
@@ -18,11 +17,23 @@ class LocalDataSource private constructor(private val plantDao: PlantDao) {
             }
     }
 
-    fun getAllPlantCondition(): LiveData<PlantConditionEntity> = plantDao.getAllPlantCondition()
+    fun getHumidity(): LiveData<PlantHumidityEntity> = plantDao.getHumidity()
+
+    fun getTemperature(): LiveData<PlantTemperatureEntity> = plantDao.getTemperature()
+
+    fun getSoilDryness(): LiveData<SoilDrynessEntity> = plantDao.getSoilDryness()
+
+    fun getSoilMoisture(): LiveData<SoilMoistureEntity> = plantDao.getSoilMoisture()
+
+    fun insertHumidity(humid: PlantHumidityEntity) = plantDao.insertHumidity(humid)
+
+    fun insertTemperature(temp: PlantTemperatureEntity) = plantDao.insertTemperature(temp)
+
+    fun insertSoilDryness(dryness: SoilDrynessEntity) = plantDao.insertSoilDryness(dryness)
+
+    fun insertSoilMoisture(moisture: SoilMoistureEntity) = plantDao.insertSoilMoisture(moisture)
 
     fun getAllPlant(): LiveData<PlantEntity> = plantDao.getAllPlant()
 
     fun insertPlantName(name: String) = plantDao.insertPlantName(name)
-
-    fun insertPlantCondition(plant: PlantConditionEntity) = plantDao.insertPlantCondition(plant)
 }

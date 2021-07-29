@@ -5,5 +5,6 @@ data class PlantEntity(
     var name: String,
     var humidity: String,
     var temperature: String,
-    var pH: String
+    var soilMoisture: String,
+    var soilDryness: String
 )

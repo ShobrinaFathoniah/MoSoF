@@ -4,11 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.haviks.mosof.data.local.entity.PlantConditionEntity
-import com.haviks.mosof.data.local.entity.PlantNameEntity
+import com.haviks.mosof.data.local.entity.*
 
 @Database(
-    entities = [PlantConditionEntity::class, PlantNameEntity::class],
+    entities = [PlantHumidityEntity::class, PlantNameEntity::class, PlantTemperatureEntity::class,
+               SoilMoistureEntity::class, SoilDrynessEntity::class],
     version = 1,
     exportSchema = false
 )
